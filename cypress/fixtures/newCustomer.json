@@ -1,0 +1,12 @@
+{
+    "customerName": "rodi",
+    "gender": "m",
+    "dateBirth": "1997-10-10",
+    "address": "calle 24 num 80 09",
+    "city": "Medellin",
+    "state": "Colombia",
+    "pin": "123456",
+    "mobileNumber": "3982315434",
+    "email": "rodi@gmail.com",
+    "password": "1234rodi"
+}
