@@ -1,7 +1,6 @@
 //Se realiza la verificacion de los casos de prueba Login, Crear Usuario , Crear Cuenta y Eliminar Cuenta
 
 
-
 /// Se ignoran los errores de la pagina
 Cypress.on('uncaught:exception', (err,runnable) =>{
     console.log('err:'+err);
@@ -18,7 +17,7 @@ describe('Guru99 Bank', () => {
         cy.fixture('login.json').as('loginData');
         cy.fixture('newCustomer.json').as('newCustomerData');
         cy.fixture('newAccount.json').as('newAccountData');
-        //cy.visit('http://demo.guru99.com/V4/index.php');
+        
     });
 
     // test de login
@@ -41,8 +40,20 @@ describe('Guru99 Bank', () => {
         // Creamos un nuevo Cliente
         cy.get('.menusubnav > :nth-child(2) > a').should('contain',"New Customer").click();
         
-        cy.get('@newCustomerData').then(({customerName,gender,dateBirth,address,city,state,pin,mobileNumber,email,password}) => {
+        cy.get('@newCustomerData').then(({customerName,gender,dateBirth,address,city,state,pin,mobileNumber,password}) => {
+    
+            //se genera el email de manera automatica y aletoria
+        
+            var email = '';
+            var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            var charactersLength = characters.length;
+            for ( var i = 0; i < 10; i++ ) {
+                email += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
             
+            email = email+"@guru.com";
+            
+
             // Se diligencian los campos del formulario
             cy.get(':nth-child(4) > :nth-child(2) > input').type(customerName);
             cy.get(`[value=${gender}]`).check().should('be.checked');
