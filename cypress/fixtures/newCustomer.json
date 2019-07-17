@@ -1,12 +1,12 @@
 
 {
-    "customerName": "user",
+    "customerName": "Mateo Rios",
     "gender": "m",
-    "dateBirth": "1997-10-09",
-    "address": "calle 12",
+    "dateBirth": "1997-11-09",
+    "address": "calle 30",
     "city": "Medellin",
     "state": "Colombia",
-    "pin": "778777",
-    "mobileNumber": "8765647",
-    "password": "ronn"
+    "pin": "981234",
+    "mobileNumber": "3333333",
+    "password": "mateo"
 }
